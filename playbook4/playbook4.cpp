@@ -20,15 +20,9 @@ int main(int argc, char* argv[]) {
     debugFullPrintout = false;
     createFlag = false;
 
-    // Parse command line arguments (function in `playbookcore.cpp`)
     if (commandArgumentHandler(argc, argv) == 0) {
-        // Get the current working directory
-        std::string currentWorkingDir = getCurrentWorkingDir();
+        std::string fullInputPath = getCurrentWorkingDir() + "/" + inputFilename;
 
-        // Combine the current working directory with the input filename
-        std::string fullInputPath = currentWorkingDir + "/" + inputFilename;
-
-        // Check if the file exists in the current working directory
         if (!fs::exists(fullInputPath)) {
             std::cerr << "Error: " << fullInputPath << " not detected" << std::endl;
             return 1;
