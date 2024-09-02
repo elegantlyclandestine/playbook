@@ -5,10 +5,10 @@
 #include <string>
 #include <unordered_map>
 #include <filesystem>
+#include <fstream>
 #include <ctime>
 #include <unistd.h>
 
-// Declare global variables as extern
 extern bool debug;
 extern bool debugPrintout;
 extern bool debugFull;
@@ -20,5 +20,7 @@ extern std::string inputFilename;
 extern std::string projectName;
 extern std::string projectId;
 extern std::string debugFlag;
+extern std::string timestamp;
+extern std::string debugInfo;
 
-#endif // PBK_ENVIRONMENT_VARIABLES_H
+#endif

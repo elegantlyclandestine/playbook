@@ -1,7 +1,8 @@
 #include <string>
+#include <fstream>
+#include <filesystem>
 #include "pbkenvironmentvariables.h"
 
-// Define global variables
 bool debug = false;
 bool debugPrintout = false;
 bool debugFull = false;
@@ -13,3 +14,5 @@ std::string inputFilename = "";
 std::string projectName = "";
 std::string projectId = "";
 std::string debugFlag = "";
+std::string timestamp = std::to_string(std::time(nullptr));
+std::string debugInfo = "";

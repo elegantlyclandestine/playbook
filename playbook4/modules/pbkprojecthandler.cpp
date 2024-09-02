@@ -12,10 +12,7 @@
 namespace fs = std::__fs::filesystem;
 
 int buildNewProject(std::string projectName, std::string projectId, std::string debugFlag) {
-    std::string timestamp = std::to_string(std::time(nullptr));
     std::ofstream creationDbgFile;
-    std::string debugInfo;
-
     if (debugFlag == "debug-printout") {
         std::string debugFilePath=getCurrentWorkingDir()+"/debug-creation-"+projectId+"-"+timestamp+".log";
         creationDbgFile.open(debugFilePath);
@@ -34,7 +31,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
 
     // Check if the project name is empty
@@ -51,7 +47,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                 std::cout << debugInfo << std::endl;
             }
             creationDbgFile << debugInfo << std::endl;
-            creationDbgFile.flush();
         }
 
         std::string confirmation;
@@ -65,7 +60,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                     std::cout << debugInfo << std::endl;
                 }
                 creationDbgFile << debugInfo << std::endl;
-                creationDbgFile.flush();
             }
         } else {
             if (debugFlag == "debug" || debugFlag == "debug-printout") {
@@ -74,7 +68,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                     std::cout << debugInfo << std::endl;
                 }
                 creationDbgFile << debugInfo << std::endl;
-                creationDbgFile.flush();
             }
             std::cerr << "Overwrite aborted by user." << std::endl;
             return 1;
@@ -90,7 +83,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                 std::cout << debugInfo << std::endl;
             }
             creationDbgFile << debugInfo << std::endl;
-            creationDbgFile.flush();
         }
     } catch (const fs::filesystem_error& e) {
         if (debugFlag == "debug" || debugFlag == "debug-printout") {
@@ -99,7 +91,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                 std::cout << debugInfo << std::endl;
             }
             creationDbgFile << debugInfo << std::endl;
-            creationDbgFile.flush();
         }
         std::cerr << "Error: Failed to create directory `" << projectName << "`: " << e.what() << std::endl;
         return 1;
@@ -116,14 +107,12 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
 
         debugInfo = "(PLAYBOOK3) Script file path: " + scriptFilePath;
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
 
     // Open the files within the new directory
@@ -137,7 +126,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                 std::cout << debugInfo << std::endl;
             }
             creationDbgFile << debugInfo << std::endl;
-            creationDbgFile.flush();
         }
         std::cerr << "Error: Emoji configuration file could not be opened/created." << std::endl
                   << "You may not have the correct permissions." << std::endl;
@@ -151,7 +139,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                 std::cout << debugInfo << std::endl;
             }
             creationDbgFile << debugInfo << std::endl;
-            creationDbgFile.flush();
         }
         std::cerr << "Error: Playbook script file could not be opened/created." << std::endl
                   << "You may not have the correct permissions." << std::endl;
@@ -165,7 +152,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
     sampleConfig << "foo=😀" << std::endl
                  << "bar=😁" << std::endl
@@ -178,7 +164,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
 
     // Write to the script file
@@ -188,7 +173,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
 
     sampleScript << "::: " << projectName << std::endl
@@ -262,7 +246,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
         debugInfo = "(PLAYBOOK3) SUCCESS: `" + projectName + "` was successfully built.";
@@ -270,7 +253,6 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
-        creationDbgFile.flush();
     }
     creationDbgFile.close();
     std::cout << "Your Playbook 3 project `" << projectName << "` has been successfully created." << std::endl
