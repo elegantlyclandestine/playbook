@@ -39,8 +39,8 @@ Now, it doesn’t look like a lot. But when you get to scripting large projects,
 - supports project creation on the fly with `playbook3 create <project-name> <projectID>`
 - removed need for strict `.pbk` extension when typing in script name for compilation
 - added full debug logging arguments as program looks through a `.pbk` file line by line:
-> `--debug-full` to print per-line output to the console\
-> `--debug-full-[printout/po]` to send above output to a log file
+- - `--debug-full` to print per-line output to the console\
+- - `--debug-full-[printout/po]` to send above output to a log file
 - `--debug` and `--debug-printout` now only print ‘major events’ happening during compilation
 
 ### Playbook 2
@@ -49,8 +49,8 @@ Now, it doesn’t look like a lot. But when you get to scripting large projects,
 - section support defined with `--[section-name-here]--`, will separate into another folder within output directory if found
 - error detection during compilation, also shows what line the program failed
 - debug arguments to show what happens line by line:
-> `--debug` to print per-line output to the console\
-> `--debug-printout` to send above output to a log file
+- - `--debug` to print per-line output to the console\
+- - `--debug-printout` to send above output to a log file
 - support for global execution so you could just run it from anywhere instead of copying the `playbook2` binary
 
 ### Playbook 1 (alienio)
