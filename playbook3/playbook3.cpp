@@ -247,7 +247,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
                  << "    That's right, Bar! How about continuing the show for the rest of our folks here?" << std::endl
                  << "bar.talk:" << std::endl
                  << "    With pleasure." << std::endl
-                 << "    You can define sections as we've already done for you, with --[section name here]--." << std::endl
+                 << "    You can define sections like we've already done for you around the top." << std::endl
                  << "foo.talk:" << std::endl
                  << "    Make sure you disable special dashes, because the program doesn't recognise those!" << std::endl
                  << "bar.talk:" << std::endl
