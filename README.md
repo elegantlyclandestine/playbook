@@ -24,7 +24,7 @@ github.talk:
 ```
 You would compile it like this (as of version 3):
 ```
-playbook3 hw.pbk
+playbook3 hw
 ```
 The result is this, in the file on directory `hw/section` with name `part_1.txt`:
 ```
