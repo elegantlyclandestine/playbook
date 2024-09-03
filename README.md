@@ -85,3 +85,17 @@ fr Promise.
 - rudimentary support for sections, was actually just ignored
 - text files would just output in the same folder as the project
 - `playbook1` (then named `alienio`) would need to be in the same folder as the `.pbk` being compiled
+
+## What’s next?
+**Playbook 4** will introduce the following features:
+- cleaner codebase to work with (if you’re a developer looking to fork this project)
+- `--limit [1-10]` argument depending on how many messages you want to trigger a file split
+- `--premium-bypass` argument to allow up to a 30-message split for `--limit`
+- more detailed error and debug outputs
+- comment support for debug files – same syntax as playbook script files `::: like this`
+- ~~you can check the version with `--v/--version`! (trivial, I know LOL)~~ **IMPLEMENTED**
+- config support for symbols to either be added to the beginning or end of each message (or both) like one of these:
+- - `👋 Hello!`
+- - `Hello! 👋`
+- - `👋 Hello! 👋`
+- PluralKit support (I may already have this by accident, but no way of knowing for sure until I tested this)
