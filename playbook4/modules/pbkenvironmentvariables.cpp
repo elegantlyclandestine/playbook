@@ -42,4 +42,5 @@ extern std::unordered_map<int, std::pair<std::string, std::string>> errorCodes =
     {9006, {"Section closed early ", "SECTION_WITHOUT_OPENING"}},
     {9007, {"Symbol to emoji configuration file not found", "NO_CONFIG_FILE"}},
     {9008, {"Undefined section found", "UNNAMED_SECTION"}},
+    {9009, {"Project name is empty", "NO_PROJECT_NAME_PROJECT_CREATOR"}},
 };
