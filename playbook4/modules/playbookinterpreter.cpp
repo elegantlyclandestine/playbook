@@ -21,10 +21,11 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     std::string currentSection = baseName; // Current section directory
     std::ofstream outputFile;
     std::ofstream debugFile;
-    bool skipLine = false; // Flag to handle lines after symbols
-    bool sectionDefined = false; // Track if any section is defined
-    bool inSection = false; // Track if currently inside a section
-    bool debugEnabled = (debug || debugPrintout) || (debugFull || debugFullPrintout); // Track if any full debug arguments are used
+    bool skipLine = false;
+    bool sectionDefined = false;
+    bool inSection = false;
+    // used if any debug flags are set, full or not
+    bool debugEnabled = (debug || debugPrintout) || (debugFull || debugFullPrintout);
 
     // Print working directory for debugging
     if (debugEnabled) {
