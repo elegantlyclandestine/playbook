@@ -5,7 +5,6 @@
 #include <filesystem>
 #include <ctime>
 #include <unistd.h>
-#include <vector>
 #include "../header/playbookcore.h"
 #include "../header/pbkprojecthandler.h"
 #include "../header/playbookinterpreter.h"
@@ -22,14 +21,20 @@ std::unordered_map<std::string, std::string> loadConfig(const std::string& confi
     std::unordered_map<std::string, std::string> emojiMap;
     std::ifstream configFile(configFilePath);
     std::string line;
+    bool commentFound = false;
 
     while (std::getline(configFile, line)) {
+        // if comment found, skip line
+        if (line.find(':::') == !std::string::npos) {
+            commentFound = true;
+        }
         size_t delimPos = line.find('=');
-        if (delimPos != std::string::npos) {
+        if (delimPos != std::string::npos && !commentFound) {
             std::string symbol = line.substr(0, delimPos);
             std::string emoji = line.substr(delimPos + 1);
             emojiMap[symbol] = emoji;
         }
+        commentFound = false;
     }
     return emojiMap;
 }
