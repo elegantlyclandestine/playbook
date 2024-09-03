@@ -8,3 +8,4 @@ playbook4/.DS_Store
 .vscode/launch.json
 .vscode/settings.json
 .vscode/tasks.json
+/playbook4/build

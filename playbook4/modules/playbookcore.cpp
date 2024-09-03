@@ -25,7 +25,7 @@ std::unordered_map<std::string, std::string> loadConfig(const std::string& confi
 
     while (std::getline(configFile, line)) {
         // if comment found, skip line
-        if (line.find(':::') == !std::string::npos) {
+        if (line.find(":::") == !std::string::npos) {
             commentFound = true;
         }
         size_t delimPos = line.find('=');
