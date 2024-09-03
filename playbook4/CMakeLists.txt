@@ -24,6 +24,7 @@ add_executable(playbook4
     modules/playbookcore.cpp
     modules/playbookinterpreter.cpp
     modules/pbkprojcreatorwriteout.cpp
+    modules/pbkinterprethandlers.cpp
 )
 
 # Optionally, link libraries (if needed)
