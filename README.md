@@ -19,8 +19,10 @@ Actually, it’s **an entire scripting language.** This is what a sample Playboo
 --[section]--
 nicole.talk:
     Hello world!
+    This is Playbook 3 going live!
 github.talk:
     World, hello!
+    Going live, this is Playbook 3!
 ```
 You would compile it like this (as of version 3):
 ```
@@ -29,9 +31,11 @@ playbook3 hw
 The result is this, in the file on directory `hw/section` with name `part_1.txt`:
 ```
 👩 Hello, world!
+This is Playbook 3 going live!
 🤖 World, hello!
+Going live, this is Playbook 3!
 ```
-Now, it doesn’t look like a lot. But when you get to scripting large projects, *this* is where Playbook shines with its 10-at-a-time message splitting.
+Now, it doesn’t look like a lot. But when you get to scripting large projects with lots of multi-line messages, *this* is where Playbook shines with its 10-at-a-time message splitting.
 
 ## What are the features?
 **Here’s the history of them, from latest to oldest (as of version 3):**
