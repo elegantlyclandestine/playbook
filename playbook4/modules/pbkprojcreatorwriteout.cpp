@@ -13,7 +13,10 @@
 namespace fs = std::__fs::filesystem;
 
 void writeConfig(std::ofstream& configOut) {
-    configOut << "foo=😀" << std::endl
+    configOut << "::: Format:" << std::endl
+              << "::: symbol=trigger" << std::endl
+              << "" << std::endl
+              << "foo=😀" << std::endl
               << "bar=😁" << std::endl
               << "narrator=🎬" << std::endl;
     configOut.close();
