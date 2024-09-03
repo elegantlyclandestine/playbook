@@ -3,6 +3,9 @@
 #include <filesystem>
 #include "pbkenvironmentvariables.h"
 
+int playbookMajorVersion = 4;
+int playbookMinorVersion = 0;
+
 bool debug = false;
 bool debugPrintout = false;
 bool debugFull = false;

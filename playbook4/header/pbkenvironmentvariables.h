@@ -22,5 +22,7 @@ extern std::string projectId;
 extern std::string debugFlag;
 extern std::string timestamp;
 extern std::string debugInfo;
+extern int playbookMajorVersion;
+extern int playbookMinorVersion;
 
 #endif

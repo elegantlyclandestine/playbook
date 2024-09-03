@@ -37,7 +37,7 @@ void writePbkFile(std::ofstream& pbkOut) {
            << "    # Markdown works pretty well too." << std::endl
            << "    -# You see that?" << std::endl
            << "foo.talk:" << std::endl
-           << "    Okay, showoff. Anyway, this is what a PLAYBOOK 3 script looks like." << std::endl
+           << "    Okay, showoff. Anyway, this is what a PLAYBOOK " << playbookMajorVersion << " script looks like." << std::endl
            << "    You can edit it as much as you want, hell you can have thousands of lines and it will process just fine!" << std::endl
            << "    It's scalable to any size of roleplay you want. Just edit the emojiconfig.txt to add, change or remove characters as needed." << std::endl
            << "bar.talk:" << std::endl
@@ -68,7 +68,7 @@ void writePbkFile(std::ofstream& pbkOut) {
            << "foo.talk:" << std::endl
            << "    Hello from another section, ladies and gentlemen! Bar, I believe you have some closing things to say?" << std::endl
            << "bar.talk:" << std::endl
-           << "    Yup. If you want to see what's behind the scenes when PLAYBOOK 3 compiles your script, you can type --debug to see what it's doing!" << std::endl
+           << "    Yup. If you want to see what's behind the scenes when PLAYBOOK " << playbookMajorVersion << " compiles your script, you can type --debug to see what it's doing!" << std::endl
            << "    And if you don't want that log cluttering your command line display, you can type --debug-printout and look at the log file after it finishes!" << std::endl
            << "foo.talk:" << std::endl
            << "    But watch it, folks! You could make a mistake when making Playbook scripts. Don't worry, the program will catch it for you!" << std::endl
