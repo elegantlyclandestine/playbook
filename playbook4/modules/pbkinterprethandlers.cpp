@@ -5,20 +5,13 @@
 #include <filesystem>
 #include <ctime>
 #include <unistd.h>
+#include <utility>
 #include "../header/playbookcore.h"
 #include "../header/playbookinterpreter.h"
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/pbkinterprethandlers.h"
 
 void interpreterDebugHandler(std::ofstream& debugFile, std::string debugType, std::string debugInfo, std::string debugFlag) {
-    std::string playbookOutput = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+")";
-    std::unordered_map<int, std::string, std::string> debugCodes = {
-    {2001, playbookOutput, "ProgramOutput"},
-    {2002, "(DIRECTORY) ", "DirectoryPrint"},
-    {2003, "(RAW LINE)  ", "RawOutput"},
-    {2004, "(FOUND)     ", "SymbolDetected"},
-    {2005, "(SECTION)   ", "SectionSwitch"},
-    {2006, "(PROCESSED) ", "ProcessedEmojiAndText"},
-    {2007, "(SPLIT)     ", "FileSplit"}
-};
+    //debug and error codes defined in `pbkenvironmentvariables.cpp`
+
 }

@@ -7,6 +7,7 @@
 #include <filesystem>
 #include <fstream>
 #include <ctime>
+#include <utility>
 #include <unistd.h>
 
 extern bool debug;
@@ -24,5 +25,7 @@ extern std::string timestamp;
 extern std::string debugInfo;
 extern int playbookMajorVersion;
 extern int playbookMinorVersion;
+extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes;
+extern std::unordered_map<int, std::pair<std::string, std::string>> errorCodes;
 
 #endif
