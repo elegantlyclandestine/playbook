@@ -93,7 +93,7 @@ fr Promise.
 - `--premium-bypass` argument to allow up to a 30-message split for `--limit`
 - more detailed error and debug outputs
 - comment support for debug files – same syntax as playbook script files `::: like this`
-- you can check the version with `--v/--version`! (trivial, I know LOL)
+- ~~you can check the version with `--v/--version`! (trivial, I know LOL)~~ **IMPLEMENTED**
 - config support for symbols to either be added to the beginning or end of each message (or both) like one of these:
 - - `👋 Hello!`
 - - `Hello! 👋`
