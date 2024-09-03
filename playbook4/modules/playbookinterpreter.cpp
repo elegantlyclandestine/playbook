@@ -19,7 +19,7 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     int symbolCount = 0; // Track the number of symbols encountered
     int sectionIndex = 1; // Track section indices
     std::string currentSection = baseName; // Current section directory
-    std::ofstream outputFile(currentSection + "/part_" + std::to_string(fileIndex) + ".txt");
+    std::ofstream outputFile;
     std::ofstream debugFile;
     bool skipLine = false; // Flag to handle lines after symbols
     bool sectionDefined = false; // Track if any section is defined
