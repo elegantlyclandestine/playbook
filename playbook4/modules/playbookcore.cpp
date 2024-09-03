@@ -55,6 +55,9 @@ int commandArgumentHandler(int argCount, char* argValues[]) {
     for (int i = 1; i < argCount; ++i) {
         std::string arg = argValues[i];
 
+        if (arg == "--version" || arg == "--v") {
+            std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
+        }
         if (arg == "--debug") {
             debug = true;
             creationDebugFlag = "debug";
