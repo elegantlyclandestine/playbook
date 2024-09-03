@@ -3,7 +3,7 @@
 ## Origins
 I initially created this program to help out with scripting large sequences for one of my solo role-plays: *Alien: Inside Out*. (Yes, it’s an *Alien* and *Inside Out* crossover. Who would have thought?) I was getting tired of writing ten messages at a time, complete with the emojis I had to find or autocomplete on my keyboard, both on laptop and phone.
 
-And knowing that I had some background in programming, first with Node.js, then Python, and my final form: C++. Since the latter-most is the language I was best at, I thought: **why not make a program that automatically splits the messages ten at a time?**
+And knowing that I had some background in programming, first with Node.js, then Python, and my final form: C++, something brewed in my silly little head. Since the latter-most is the language I was best at, I thought: **why not make a program that automatically splits the messages ten at a time?**
 
 That’s when the idea for **Playbook** was born. Actually, I didn’t call it **Playbook** yet, it didn’t have a proper name until I thought of a placeholder: **alienio**, in reference to the solo role-play I was trying to complete. (It took six days to complete; day two was when I thought of programming this utility!)
 
