@@ -27,7 +27,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     // Improved logging for initial project creation attempt
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) Attempting to create project directory `" + projectName + "` with project ID `" + projectId + "`";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Attempting to create project directory `" + projectName + "` with project ID `" + projectId + "`";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
@@ -56,7 +56,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
         if (confirmation == "y" || confirmation == "Y") {
             if (debugFlag == "debug" || debugFlag == "debug-printout") {
-                debugInfo = "(PLAYBOOK3) Warning ignored, overwriting `" + projectName + "`";
+                debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Warning ignored, overwriting `" + projectName + "`";
                 if (debugFlag == "debug") {
                     std::cout << debugInfo << std::endl;
                 }
@@ -64,7 +64,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
             }
         } else {
             if (debugFlag == "debug" || debugFlag == "debug-printout") {
-                debugInfo = "(PLAYBOOK3) Project creation aborted.";
+                debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Project creation aborted.";
                 if (debugFlag == "debug") {
                     std::cout << debugInfo << std::endl;
                 }
@@ -79,7 +79,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
         // Create the project directory
         fs::create_directory(fullCreationPath);
         if (debugFlag == "debug" || debugFlag == "debug-printout") {
-            debugInfo = "(PLAYBOOK3) Successfully created directory: " + projectName;
+            debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Successfully created directory: " + projectName;
             if (debugFlag == "debug") {
                 std::cout << debugInfo << std::endl;
             }
@@ -87,7 +87,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
         }
     } catch (const fs::filesystem_error& e) {
         if (debugFlag == "debug" || debugFlag == "debug-printout") {
-            debugInfo = "(PLAYBOOK3) Project creation failed. An `std::__fs::filesystem error` may have occurred. Terminating project creation...";
+            debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Project creation failed. An `std::__fs::filesystem error` may have occurred. Terminating project creation...";
             if (debugFlag == "debug") {
                 std::cout << debugInfo << std::endl;
             }
@@ -103,13 +103,13 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     // Log file paths
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) Config file path: " + configFilePath;
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Config file path: " + configFilePath;
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
 
-        debugInfo = "(PLAYBOOK3) Script file path: " + scriptFilePath;
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Script file path: " + scriptFilePath;
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
@@ -122,7 +122,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     if (!sampleConfig.is_open()) {
         if (debugFlag == "debug" || debugFlag == "debug-printout") {
-            debugInfo = "(PLAYBOOK3) Project creation failed. `emojiconfig.txt` could not be created within the project folder.";
+            debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Project creation failed. `emojiconfig.txt` could not be created within the project folder.";
             if (debugFlag == "debug") {
                 std::cout << debugInfo << std::endl;
             }
@@ -135,7 +135,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     if (!sampleScript.is_open()) {
         if (debugFlag == "debug" || debugFlag == "debug-printout") {
-            debugInfo = "(PLAYBOOK3) Project creation failed. `" + projectId + ".pbk` could not be created within the project folder.";
+            debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Project creation failed. `" + projectId + ".pbk` could not be created within the project folder.";
             if (debugFlag == "debug") {
                 std::cout << debugInfo << std::endl;
             }
@@ -148,7 +148,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     // Write to the config file
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) Now creating `emoji_config.txt` within " + projectName + "...";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Now creating `emoji_config.txt` within " + projectName + "...";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
@@ -157,7 +157,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
     writeConfig(sampleConfig);
 
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) `emoji_config.txt` successfully created within " + projectName + ".";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" `emoji_config.txt` successfully created within " + projectName + ".";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
@@ -166,7 +166,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
 
     // Write to the script file
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) Now creating `" + projectId + ".pbk` within " + projectName + "...";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Now creating `" + projectId + ".pbk` within " + projectName + "...";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
@@ -175,14 +175,14 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
     writePbkFile(sampleScript);
 
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) `" + projectId + ".pbk` successfully created within " + projectName + ".";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" `" + projectId + ".pbk` successfully created within " + projectName + ".";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }
         creationDbgFile << debugInfo << std::endl;
     }
     if (debugFlag == "debug" || debugFlag == "debug-printout") {
-        debugInfo = "(PLAYBOOK3) SUCCESS: `" + projectName + "` was successfully built.";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" SUCCESS: `" + projectName + "` was successfully built.";
         if (debugFlag == "debug") {
             std::cout << debugInfo << std::endl;
         }

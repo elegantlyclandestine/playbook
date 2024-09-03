@@ -29,7 +29,7 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     // Print working directory for debugging
     if (debugEnabled) {
         std::string timestamp = std::to_string(std::time(nullptr));
-        debugInfo = "(PLAYBOOK3) Program will now compile "+inputFilename+". Please wait...";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+") Program will now compile "+inputFilename+". Please wait...";
         if (debug || debugFull) {
             std::cout << debugInfo << std::endl;
             }
@@ -210,7 +210,7 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     }
 
     if (debugEnabled) {
-        debugInfo = "(PLAYBOOK3) Program has successfully compiled `"+inputFilename+"`.";
+        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Program has successfully compiled `"+inputFilename+"`.";
         if (debug || debugFull) {
             std::cout << debugInfo << std::endl;
             }
