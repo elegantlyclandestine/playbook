@@ -8,6 +8,7 @@
 #include "../header/playbookcore.h"
 #include "../header/playbookinterpreter.h"
 #include "../header/pbkenvironmentvariables.h"
+#include "../header/pbkinterprethandlers.h"
 
 namespace fs = std::__fs::filesystem;
 
