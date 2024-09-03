@@ -11,8 +11,9 @@
 #include "../header/pbkinterprethandlers.h"
 
 void interpreterDebugHandler(std::ofstream& debugFile, std::string debugType, std::string debugInfo, std::string debugFlag) {
+    std::string playbookOutput = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+")";
     std::unordered_map<int, std::string, std::string> debugCodes = {
-    {2001, "(PLAYBOOK"+std::to_string(playbookMajorVersion)+")", "ProgramOutput"},
+    {2001, playbookOutput, "ProgramOutput"},
     {2002, "(DIRECTORY) ", "DirectoryPrint"},
     {2003, "(RAW LINE)  ", "RawOutput"},
     {2004, "(FOUND)     ", "SymbolDetected"},
