@@ -189,7 +189,7 @@ int buildNewProject(std::string projectName, std::string projectId, std::string 
         creationDbgFile << debugInfo << std::endl;
     }
     creationDbgFile.close();
-    std::cout << "Your Playbook 3 project `" << projectName << "` has been successfully created." << std::endl
+    std::cout << "Your Playbook project `" << projectName << "` has been successfully created." << std::endl
               << "Please refer to the " << projectId << ".pbk in your folder to get started." << std::endl;
     return 0;
 }
