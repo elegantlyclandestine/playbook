@@ -29,7 +29,7 @@ extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes =
     {2003, {"(RAW LINE)  ", "Raw_Output"}},
     {2004, {"(FOUND)     ", "Character_Detected"}},
     {2005, {"(SECTION)   ", "Section_Switch"}},
-    {2006, {"(PROCESSED) ", "Processed_Emoji_And_Text"}},
+    {2006, {"(PROCESSED) ", "Processed_Emoji_From_Symbol"}},
     {2007, {"(SPLIT)     ", "File_Split"}}
 };
 
