@@ -96,7 +96,7 @@ fr Promise.
 - `--limit [1-10]` argument depending on how many messages you want to trigger a file split
 - `--premium-bypass` argument to allow up to a 30-message split for `--limit`
 - more detailed error and debug outputs
-- comment support for debug files – same syntax as playbook script files `::: like this`
+- ~~comment support for debug files – same syntax as playbook script files `::: like this`~~ **IMPLEMENTED**
 - ~~you can check the version with `--v/--version`! (trivial, I know LOL)~~ **IMPLEMENTED**
 - config support for symbols to either be added to the beginning or end of each message (or both) like one of these:
 - - `👋 Hello!`
