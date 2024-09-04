@@ -9,6 +9,7 @@
 #include "../header/pbkprojecthandler.h"
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/pbkprojcreatorwriteout.h"
+#include "../header/pbkprojdebugerrorhandlers.h"
 
 namespace fs = std::__fs::filesystem;
 

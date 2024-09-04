@@ -24,7 +24,7 @@ std::string debugInfo = "";
 
 std::string playbookOutput = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+")";
 extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes = {
-    {2001, {playbookOutput, "Program_Output"}},
+    {2001, {playbookOutput, "Default_Output"}},
     {2002, {"(DIRECTORY) ", "Directory_Print"}},
     {2003, {"(RAW LINE)  ", "Raw_Output"}},
     {2004, {"(FOUND)     ", "Character_Detected"}},
