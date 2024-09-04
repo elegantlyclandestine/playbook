@@ -17,9 +17,9 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     std::string debugInfo;
     std::string line;
     int fileIndex = 1;
-    int symbolCount = 0; // Track the number of symbols encountered
-    int sectionIndex = 1; // Track section indices
-    std::string currentSection = baseName; // Current section directory
+    int symbolCount = 0;
+    int sectionIndex = 1;
+    std::string currentSection = baseName;
     std::ofstream outputFile;
     std::ofstream debugFile;
     bool skipLine = false;

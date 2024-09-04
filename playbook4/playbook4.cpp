@@ -19,10 +19,8 @@ int main(int argc, char* argv[]) {
     debugFull = false;
     debugFullPrintout = false;
     createFlag = false;
-
     if (commandArgumentHandler(argc, argv) == 0) {
         std::string fullInputPath = getCurrentWorkingDir() + "/" + inputFilename;
-
         if (!fs::exists(fullInputPath)) {
             std::cerr << "Error: " << fullInputPath << " not detected" << std::endl;
             return 1;
@@ -40,7 +38,6 @@ int main(int argc, char* argv[]) {
         }
         interpretScript(inputFile, baseName);
         std::cout << "Processing complete." << std::endl;  
-        
     } else {
         return 1;
     }
