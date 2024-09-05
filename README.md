@@ -137,6 +137,6 @@ fr Promise.
   - `begin Hello!`
   - `Hello! end`
   - `begin Hello! end`
-- extending from above planned feature, change syntax for lone beginning brackets to `symbol=<begin`, but also add support for lone ending brackets defined as `symbol=end>`
+- extending from above planned feature, change syntax for lone beginning brackets to `symbol=<begin`, also add support for lone ending brackets defined as `symbol=end>`
 - PluralKit support (I may already have this by accident, but no way of knowing for sure until I tested this)
 
