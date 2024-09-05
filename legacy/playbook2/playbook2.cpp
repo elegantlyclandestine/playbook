@@ -46,14 +46,19 @@ int main(int argc, char* argv[]) {
 
     // Parse command line arguments
     for (int i = 1; i < argc; ++i) {
-        if (std::string(argv[i]) == "--debug") {
+        std::string arg = argv[i];
+        if (arg == "--version" || arg == "--v") {
+            std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
+            return 0;
+        }
+        if (arg == "--debug") {
             debug = true;
-        } else if (std::string(argv[i]) == "--debug-printout") {
+        } else if (arg == "--debug-printout") {
             debugPrintout = true;
             std::string timestamp = std::to_string(std::time(nullptr));
             debugFile.open("debug-" + timestamp + ".log");
         } else {
-            inputFilename = argv[i];
+            inputFilename = arg;
         }
     }
 

@@ -329,6 +329,7 @@ int main(int argc, char* argv[]) {
         std::string arg = argv[i];
         if (arg == "--version" || arg == "--v") {
             std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
+            return 0;
         }
         if (arg == "--debug") {
             debug = true;
