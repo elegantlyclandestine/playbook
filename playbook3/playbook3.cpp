@@ -8,6 +8,9 @@
 
 namespace fs = std::__fs::filesystem;
 
+const int playbookMajorVersion = 3;
+const int playbookMinorVersion = 5;
+
 std::string getCurrentWorkingDir() {
     char temp[PATH_MAX];
     return (getcwd(temp, sizeof(temp)) ? std::string(temp) : std::string(""));
@@ -324,7 +327,9 @@ int main(int argc, char* argv[]) {
     // Parse command line arguments
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
-
+        if (arg == "--version" || arg == "--v") {
+            std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
+        }
         if (arg == "--debug") {
             debug = true;
             creationDebugFlag = "debug";

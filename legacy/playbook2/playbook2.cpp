@@ -8,6 +8,9 @@
 
 namespace fs = std::__fs::filesystem;
 
+const int playbookMajorVersion = 2;
+const int playbookMinorVersion = 6;
+
 std::string getCurrentWorkingDir() {
     char temp[PATH_MAX];
     return (getcwd(temp, sizeof(temp)) ? std::string(temp) : std::string(""));
