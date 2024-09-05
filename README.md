@@ -66,8 +66,8 @@ You can try putting it on your `$PATH` (macOS, Linux) or environment variables (
 ### Everything’s done. How do I compile the scripts?
 In your command prompt (assuming you have Playbook on your `$PATH` or environment variables), type `playbook <yourscript.pbk>`. Depending on the version of Playbook you’re running, the output will be as follows:
   - **Playbook 1**: The output files will be on the same directory as your script.
-  - **Playbook 2 or later+**: The output files will be on a directory named after your project, split into sections you define in the script.
-- You’re ready to send the messages now! Go to any Discord server with Tupperbox on it, and copy-paste your messages from each part file.
+  - **Playbook 2 or later**: The output files will be on a directory named after your project, split into sections you define in the script.
+You’re ready to send the messages now! Go to any Discord server with Tupperbox on it, and copy-paste your messages from each part file.
 #### If you spam with Playbook-processed messages, *you* did this yourself, not me. To anyone about to complain, please do so to the spammer, because this activity isn’t my intention.
 
 ## What are the features?
