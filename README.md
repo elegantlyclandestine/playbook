@@ -91,6 +91,7 @@ In your command prompt (assuming you have Playbook on your `$PATH` or environmen
 - support for global execution so you could just run it from anywhere instead of copying the `playbook2` binary
 
 ### Playbook 1 (alienio)
+- `.pbk` file format didn’t exist – your script file would be named `input.txt` instead
 - initial syntax defined as this:
 ```=== envy escape BEGIN ===
 fr -# kneels to Envy's level
@@ -121,7 +122,7 @@ fr Promise.
 - symbol-to-emoji configuration was initially hardcoded
 - rudimentary support for sections, was actually just ignored
 - text files would just output in the same folder as the project
-- `playbook1` (then named `alienio`) would need to be in the same folder as the `.pbk` being compiled
+- `playbook1` (then named `alienio`) would need to be in the same folder as the script being compiled
 
 ## What’s next?
 **Playbook 4** will introduce the following features:
