@@ -23,9 +23,13 @@ extern std::string projectId;
 extern std::string debugFlag;
 extern std::string timestamp;
 extern std::string debugInfo;
+extern std::string configFilePath;
+extern std::string scriptFilePath;
 extern int playbookMajorVersion;
 extern int playbookMinorVersion;
 extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes;
 extern std::unordered_map<int, std::pair<std::string, std::string>> errorCodes;
+extern std::unordered_map<int, std::string> debugOuts;
+extern std::unordered_map<int, std::string> errorOuts;
 
 #endif
