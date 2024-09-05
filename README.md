@@ -47,17 +47,26 @@ Do the following on a terminal/command prompt:
 
 Otherwise, you can just compile the other versions from Playbook 3 and older with the following command: `g++ -std=c++11 playbook(version).cpp -o playbook`.
 
-***Okay, now you have compiled the Playbook source into something useable. What’s next?***
-- You can try putting it on your `$PATH` (macOS, Linux) or environment variables (Windows) so you can compile Playbook script files anywhere.
-- **For Playbook 2 users and later**:
-  - **Playbook 2**: Create an `emoji_config.txt` file with each bracket defined as this: `symbol=bracket`, where `symbol` is how you’re going to make your characters talk in Playbook, and `bracket` is what the program will use to replace `symbol` when compiling.
-  - **Playbook 3**: Alternatively, you can get started by running `playbook create <project-name> <projectid>` on a directory where you want the project to reside. It will create the project on its own directory *within* the directory you ran the command from, where `emoji_config.txt` will already be created, alongside a sample Playbook script file for you to edit.
-- Write a simple script in Playbook format, save it as a `.pbk` file.
-  - If you’re working on a Playbook 2 or later compatible file, [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#how-does-it-work).
-  - If you’re working on a Playbook 1 compatible file (not recommended), [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#playbook-1-alienio).
-- In your command prompt (assuming you have Playbook on your `$PATH` or environment variables), type `playbook <yourscript.pbk>`. Depending on the version of Playbook you’re running, the output will be as follows:
+### Okay, now I’ve compiled the Playbook source into something useable. What’s next?
+You can try putting it on your `$PATH` (macOS, Linux) or environment variables (Windows) so you can compile Playbook script files anywhere.
+
+**If you’re working on a Playbook 2 or later compatible file**, [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#how-does-it-work).\
+**If you’re working on a Playbook 1 compatible file** (_not recommended_), [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#playbook-1-alienio).
+
+**For Playbook 3 or later users**:
+- You can get started by running `playbook create <project-name> <projectid>` on a directory where you want the project to reside. It will create the project on its own directory *within* the directory you ran the command from, where `emoji_config.txt` will already be created, alongside a sample Playbook script file for you to edit.
+
+**For Playbook 2 users**:
+- Create an `emoji_config.txt` file with each bracket defined as this: `symbol=bracket`, where `symbol` is how you’re going to make your characters talk in Playbook, and `bracket` is what the program will use to replace `symbol` when compiling.
+- Write your script in Playbook 2 format, then save it as a `.pbk` file.
+
+**For Playbook 1 users**:
+- Write your script in Playbook 1 format, then save it **EXACTLY** as a file named `input.txt`. *It will not take anything else!*
+
+### Everything’s done. How do I compile the scripts?
+In your command prompt (assuming you have Playbook on your `$PATH` or environment variables), type `playbook <yourscript.pbk>`. Depending on the version of Playbook you’re running, the output will be as follows:
   - **Playbook 1**: The output files will be on the same directory as your script.
-  - **Playbook 2+**: The output files will be on a directory named after your project, split into sections you define in the script.
+  - **Playbook 2 or later+**: The output files will be on a directory named after your project, split into sections you define in the script.
 - You’re ready to send the messages now! Go to any Discord server with Tupperbox on it, and copy-paste your messages from each part file.
 #### If you spam with Playbook-processed messages, *you* did this yourself, not me. To anyone about to complain, please do so to the spammer, because this activity isn’t my intention.
 
