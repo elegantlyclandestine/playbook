@@ -25,7 +25,6 @@ std::ofstream createDebugFile(std::string debugFlag) {
     // Else, no debug-printout detected, not making debug file
 }
 
-
 std::string getCurrentWorkingDir() {
     char temp[PATH_MAX];
     return (getcwd(temp, sizeof(temp)) ? std::string(temp) : std::string(""));
@@ -68,7 +67,6 @@ void logDebugInfo(const std::string& debugInfo, std::ofstream& dbgFile) {
 int commandArgumentHandler(int argCount, char* argValues[]) {
     for (int i = 1; i < argCount; ++i) {
         std::string arg = argValues[i];
-
         if (arg == "--version" || arg == "--v") {
             std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
         }
