@@ -128,11 +128,14 @@ fr Promise.
 - cleaner codebase to work with (if you’re a developer looking to fork this project)
 - `--limit [1-10]` argument depending on how many messages you want to trigger a file split
 - `--premium-bypass` argument to allow up to a 30-message split for `--limit`
+- `--add-emoji` argument to easily insert new characters into a project’s `emoji_config.txt`
 - more detailed error and debug outputs
 - ~~comment support for debug files – same syntax as playbook script files `::: like this`~~ **IMPLEMENTED**
 - ~~you can check the version with `--v/--version`! (trivial, I know LOL)~~ **IMPLEMENTED**
-- config support for symbols to either be added to the beginning or end of each message (or both) like one of these:
-  - `👋 Hello!`
-  - `Hello! 👋`
-  - `👋 Hello! 👋`
+- support for beginning and ending brackets in config, defined as `symbol=begin,end` so brackets can be like this:
+  - `begin Hello!`
+  - `Hello! end`
+  - `begin Hello! end`
+- extending from above planned feature, change syntax for lone beginning brackets to `symbol=<begin`, but also add support for lone ending brackets defined as `symbol=end>`
 - PluralKit support (I may already have this by accident, but no way of knowing for sure until I tested this)
+
