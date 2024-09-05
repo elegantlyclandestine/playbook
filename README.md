@@ -37,6 +37,27 @@ Going live, this is Playbook 3!
 ```
 Now, it doesn’t look like a lot. But when you get to scripting large projects with lots of multi-line messages, *this* is where Playbook shines with its 10-at-a-time message splitting.
 
+## How do I use this?
+Currently, **I only have Mac binaries** that work under my current version, macOS Sonoma 14.2.1. I haven’t uploaded them because I have no idea if it works on anything older.
+
+So for now, the `CMakeLists.txt` should be your starting point, *if you’re building Playbook 4.*\
+Do the following on a terminal/command prompt:
+- `cmake -S . -B build` on Playbook 4’s root directory
+- `cd build`, then `make`
+
+Otherwise, you can just compile the other versions from Playbook 3 and older with the following command: `g++ -std=c++11 playbook(version).cpp -o playbook`.
+
+***Okay, now you have compiled the Playbook source into something useable. What’s next?***
+- You can try putting it on your `$PATH` (macOS, Linux) or environment variables (Windows) so you can compile Playbook script files anywhere.
+- Write a simple script in Playbook format, save it as a `.pbk` file.
+- - If you’re working on a Playbook 2 or later compatible file, [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#how-does-it-work).
+- - If you’re working on a Playbook 1 compatible file (not recommended), [refer to the syntax here](https://github.com/elegantlyclandestine/playbook?tab=readme-ov-file#playbook-1-alienio).
+- In your command prompt (assuming you have Playbook on your `$PATH` or environment variables), type `playbook <yourscript.pbk>`. Depending on the version of Playbook you’re running, the output will be as follows:
+- - **Playbook 1**: The output files will be on the same directory as your script.
+- - **Playbook 2+**: The output files will be on a directory named after your project, split into sections you define in the script.
+- You’re ready to send the messages now! Go to any Discord server with Tupperbox on it, and copy-paste your messages from each part file.
+#### If you spam with Playbook-processed messages, *you* did this yourself, not me. To anyone about to complain, please do so to the spammer, because this activity isn’t my intention.
+
 ## What are the features?
 **Here’s the history of them, from latest to oldest (as of version 3):**
 ### Playbook 3
