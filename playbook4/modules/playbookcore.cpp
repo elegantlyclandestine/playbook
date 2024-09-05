@@ -12,6 +12,20 @@
 
 namespace fs = std::__fs::filesystem;
 
+std::ofstream createDebugFile(std::string debugFlag) {
+    std::ofstream debugLogFile;
+    if (debugFlag == "debug-printout") {
+        std::string debugFilePath=getCurrentWorkingDir()+"/debug-creation-"+projectId+"-"+timestamp+".log";
+        debugLogFile.open(debugFilePath);
+        if (!debugLogFile.is_open()) {
+            std::cerr << "Error: Failed to open debug file for logging." << std::endl;
+        }
+        return debugLogFile;
+    }
+    // Else, no debug-printout detected, not making debug file
+}
+
+
 std::string getCurrentWorkingDir() {
     char temp[PATH_MAX];
     return (getcwd(temp, sizeof(temp)) ? std::string(temp) : std::string(""));

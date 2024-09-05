@@ -8,6 +8,7 @@
 #include <ctime>
 #include <unistd.h>
 
+std::ofstream createDebugFile(std::string debugFlag);
 std::string getCurrentWorkingDir();
 std::unordered_map<std::string, std::string> loadConfig(const std::string& configFilePath);
 void printDebug(std::string debugInfo, std::string debugFlag, std::string debugType);

@@ -14,16 +14,7 @@
 namespace fs = std::__fs::filesystem;
 
 int buildNewProject(std::string projectName, std::string projectId, std::string debugFlag) {
-    std::ofstream creationDbgFile;
-    if (debugFlag == "debug-printout") {
-        std::string debugFilePath=getCurrentWorkingDir()+"/debug-creation-"+projectId+"-"+timestamp+".log";
-        creationDbgFile.open(debugFilePath);
-        if (!creationDbgFile.is_open()) {
-            std::cerr << "Error: Failed to open debug file for logging." << std::endl;
-            return 1;
-        }
-    }
-
+    std::ofstream creationDbgFile = createDebugFile(debugFlag);
     std::string fullCreationPath = getCurrentWorkingDir() + "/" + projectName;
 
     // Improved logging for initial project creation attempt
