@@ -11,7 +11,7 @@ void symbolHandler();
 void emojiConfigHandler();
 void outputHandler(std::ofstream outputFile);
 void errorHandler(int invokeError);
-int interpreterDebugHandler(int invokeDebug, std::ofstream& debugFile, std::string debugType, std::string debugInfo, std::string debugFlag);
+void interpreterDebugHandler(std::ofstream& debugFile, int callCode, std::string debugInfo);
 
 #endif
 

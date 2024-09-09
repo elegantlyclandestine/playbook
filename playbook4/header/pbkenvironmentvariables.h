@@ -10,11 +10,16 @@
 #include <utility>
 #include <unistd.h>
 
+extern int playbookMajorVersion;
+extern int playbookMinorVersion;
+
 extern bool debug;
 extern bool debugPrintout;
 extern bool debugFull;
 extern bool debugFullPrintout;
 extern bool createFlag;
+extern bool debugEnabled;
+extern int callCode;
 extern std::string creationDebugFlag;
 extern std::string baseFilename;
 extern std::string inputFilename;
@@ -25,8 +30,6 @@ extern std::string timestamp;
 extern std::string debugInfo;
 extern std::string configFilePath;
 extern std::string scriptFilePath;
-extern int playbookMajorVersion;
-extern int playbookMinorVersion;
 extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes;
 extern std::unordered_map<int, std::pair<std::string, std::string>> errorCodes;
 extern std::unordered_map<int, std::string> debugOuts;

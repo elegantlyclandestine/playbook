@@ -15,4 +15,7 @@ void printDebug(std::string debugInfo, std::string debugFlag, std::string debugT
 void logDebugInfo(const std::string& debugInfo, std::ofstream& dbgFile);
 int commandArgumentHandler(int argCount, char* argValues[]);
 
+// debug and error specific
+int refreshDebug_Project(std::string projectName, std::string projectId, std::string configFilePath, std::string scriptFilePath);
+
 #endif

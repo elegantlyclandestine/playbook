@@ -29,22 +29,9 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     bool debugEnabled = (debug || debugPrintout) || (debugFull || debugFullPrintout);
 
     // Print working directory for debugging
-    if (debugEnabled) {
-        std::string timestamp = std::to_string(std::time(nullptr));
-        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+") Program will now compile "+inputFilename+". Please wait...";
-        if (debug || debugFull) {
-            std::cout << debugInfo << std::endl;
-            }
-        debugFile.open("debug-" + timestamp + ".log");
-        logDebugInfo(debugInfo, debugFile);
-    }
-    if (debugEnabled) {
-        debugInfo = "(DIRECTORY) " + getCurrentWorkingDir();
-        if (debug || debugFull) {
-            std::cout << debugInfo << std::endl;
-        }
-        logDebugInfo(debugInfo, debugFile);
-    }
+    std::string timestamp = std::to_string(std::time(nullptr));
+    debugInfo = "Program will now compile "+inputFilename+". Please wait...";
+    interpreterDebugHandler(debugFile, 901, debugInfo);
 
     // Load the emoji configuration file
     std::unordered_map<std::string, std::string> emojiMap = loadConfig("emoji_config.txt");

@@ -9,3 +9,4 @@ playbook4/.DS_Store
 .vscode/settings.json
 .vscode/tasks.json
 /playbook4/build
+playbook4/.vscode/settings.json
