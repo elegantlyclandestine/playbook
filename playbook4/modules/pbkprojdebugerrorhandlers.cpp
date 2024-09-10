@@ -12,10 +12,11 @@
 #include "../header/pbkprojdebugerrorhandlers.h"
 
 void projWriteoutDebugHandler(int invokeDebug, std::string debugType, std::string debugInfo, std::string debugFlag) {
-
+    // works the same way, except tailor made for project debugging. to be implemented.
 }
 
 int projDebugHandler(int invokeDebug, std::string debugType, std::string debugInfo, std::string debugFlag) {
     //debug and error codes defined in `pbkenvironmentvariables.cpp`
     projWriteoutDebugHandler(invokeDebug, debugType, debugInfo, debugFlag);
+    return 0;
 }

@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     debugFullPrintout = false;
     createFlag = false;
     if (commandArgumentHandler(argc, argv) == 0) {
+        // Fix path declarations if slashes are detected on inputFilename
         std::string fullInputPath = getCurrentWorkingDir() + "/" + inputFilename;
         if (!fs::exists(fullInputPath)) {
             std::cerr << "Error: " << fullInputPath << " not detected" << std::endl;
