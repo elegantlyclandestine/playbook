@@ -40,10 +40,12 @@ std::unordered_map<int, std::pair<std::string, std::string>> errorCodes = {
     {100, {"No sections defined", "NO_SECTIONS"}},
     {101, {"Input file not found", "NO_FILE_I"}},
     {102, {"Output file not found", "NO_FILE_O"}},
-    {103, {"Muted character found (symbol without .talk:)", "CHARACTER_WITHOUT_DIALOGUE"}},
+    {103, {"Muted character found; symbol without `.talk:`", "CHARACTER_WITHOUT_DIALOGUE"}},
     {104, {"Section not closed", "UNCLOSED_SECTION"}},
     {105, {"Section closed early", "SECTION_WITHOUT_OPENING"}},
     {106, {"Symbol to emoji configuration file not found", "NO_CONFIG_FILE"}},
     {107, {"Undefined section found", "UNNAMED_SECTION"}},
     {108, {"Project name is empty", "NO_PROJECT_NAME_PROJECT_CREATOR"}},
+    //109 is hardcoded in `pbkinterprethandlers.cpp`, means 'output file not found'
+    {110, {"Symbol does not exist in configuration file", "CHARACTER_SYMBOL_NOT_FOUND"}},
 };

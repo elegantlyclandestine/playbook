@@ -19,6 +19,7 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     int fileIndex = 1;
     int symbolCount = 0;
     int sectionIndex = 1;
+    int lineCount = 0;
     std::string currentSection = baseName;
     std::ofstream outputFile;
     std::ofstream debugFile;
@@ -27,6 +28,8 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     bool inSection = false;
     // used if any debug flags are set, full or not
     bool debugEnabled = (debug || debugPrintout) || (debugFull || debugFullPrintout);
+
+    // implement here the max message limit, if defined
 
     // Print working directory for debugging
     std::string timestamp = std::to_string(std::time(nullptr));
@@ -38,23 +41,17 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
 
     while (std::getline(inputFile, line)) {
         // Print raw line for debugging
-        if (debugFull || debugFullPrintout) {
-            debugInfo = "(RAW LINE)  " + line;
-            if (debug || debugFull) {
-                std::cout << debugInfo << std::endl;
-            }
-            logDebugInfo(debugInfo, debugFile);
-        }
+        interpreterDebugHandler(debugFile, 902, line);
+        lineCount++;
 
         // Skip comments starting with `:::`
         if (line.find(":::") == 0) {
             continue;
         }
 
-        // Error check: Premature section (if a ]-- is found without --[ )
+        // Error check: Premature section (if a `]--` is found without `--[`)
         if (line.find("]--") != std::string::npos && line.find("--[") == std::string::npos) {
-            std::cerr << "Error: Premature section closure detected at line: " << line << std::endl;
-            return 1;
+            interpreterErrorHandler(105, lineCount, line);
         }
 
         // Handle section definitions
@@ -69,8 +66,7 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
 
             // Error check: Blank section name
             if (sectionName.empty()) {
-                std::cerr << "Error: Blank section name detected at line: " << line << std::endl;
-                return 1;
+                interpreterErrorHandler(107, lineCount, line);
             }
 
             // Create new folder for the section
@@ -86,24 +82,17 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
             outputFile.close();
             outputFile.open(currentSection + "/part_" + std::to_string(fileIndex) + ".txt");
             if (!outputFile.is_open()) {
-                std::cerr << "Error opening output file!" << std::endl;
-                return 1;
+                interpreterErrorHandler(109, lineCount, (currentSection + "/part_" + std::to_string(fileIndex) + ".txt"));
             }
             
-            if (debugEnabled) {
-                debugInfo = "(SECTION)   Switching to section: " + sectionName;
-                if (debug || debugFull) {
-                    std::cout << debugInfo << std::endl;
-                }
-                logDebugInfo(debugInfo, debugFile);
-            }
+            debugInfo = "Switching to section: " + sectionName;
+            interpreterDebugHandler(debugFile, 904, debugInfo);
             continue;
         }
 
         // Error check: Unterminated section
         if (line.find("--[") != std::string::npos && line.find("]--") == std::string::npos) {
-            std::cerr << "Error: Unterminated section detected at line: " << line << std::endl;
-            return 1;
+            interpreterErrorHandler(104, lineCount, line);
         }
 
         // Check if the line is a symbol declaration
@@ -119,41 +108,29 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
                     symbolCount = 0;
                     outputFile.open(currentSection + "/part_" + std::to_string(fileIndex) + ".txt");
                     if (!outputFile.is_open()) {
-                        std::cerr << "Error opening output file!" << std::endl;
-                        return 1;
+                        interpreterErrorHandler(109, lineCount, (currentSection + "/part_" + std::to_string(fileIndex) + ".txt"));
                     }
                     
                     // Log file splitting info
-                    debugInfo = "(SPLIT)     Splitting into part " + std::to_string(fileIndex);
-                    if (debug || debugFull) {
-                        std::cout << debugInfo << std::endl;
-                    }
-                    logDebugInfo(debugInfo, debugFile);
+                    debugInfo = "Splitting into part " + std::to_string(fileIndex);
+                    interpreterDebugHandler(debugFile, 906, debugInfo);
                 }
 
                 currentEmoji = it->second;
                 skipLine = true; // Skip leading spaces and append emoji
                 symbolCount++;
-
-                if (debugEnabled) {
-                    debugInfo = "(FOUND)     Found symbol: `" + symbol + "` with emoji: `" + currentEmoji + "`";
-                    if (debug || debugFull) {
-                        std::cout << debugInfo << std::endl;
-                    }
-                    logDebugInfo(debugInfo, debugFile);
-                }
+                debugInfo = "Found symbol: `" + symbol + "` with emoji: `" + currentEmoji + "`";
+                interpreterDebugHandler(debugFile, 903, debugInfo);
             } else {
                 // Error check: Unknown symbol
-                std::cerr << "Error: Unknown symbol '" << symbol << "' detected at line: " << line << std::endl;
-                return 1;
+                interpreterErrorHandler(110, lineCount, line);
             }
             continue;
         }
 
         // Error check: Muted character
         if (!currentEmoji.empty() && dotPos != std::string::npos) {
-            std::cerr << "Error: Muted character (symbol with no .talk:) detected at line: " << line << std::endl;
-            return 1;
+            interpreterErrorHandler(103, lineCount, line);
         }
 
         // Process the line
@@ -161,17 +138,9 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
             line.erase(0, 4); // Remove exactly four leading spaces
             // Prepend the emoji to the processed line
             std::string processedLine = currentEmoji + " " + line;
-
-            if (debugEnabled) {
-                debugInfo = "(PROCESSED) " + processedLine;
-                if (debug || debugFull) {
-                    std::cout << debugInfo << std::endl;
-                }
-                logDebugInfo(debugInfo, debugFile);
-            }
+            interpreterDebugHandler(debugFile, 905, processedLine);
             if (!outputFile.is_open()) {
-                std::cerr << "Error opening output file!" << std::endl;
-                return 1;
+                interpreterErrorHandler(109, lineCount, (currentSection + "/part_" + std::to_string(fileIndex) + ".txt"));
             }
             outputFile << processedLine << std::endl;
 
@@ -194,17 +163,11 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
 
     // Error check: No sections defined
     if (!sectionDefined) {
-        std::cerr << "Error: No sections defined in the script!" << std::endl;
-        return 1;
+        interpreterErrorHandler(100, 0, "Reached end of file");
     }
 
-    if (debugEnabled) {
-        debugInfo = "(PLAYBOOK"+std::to_string(playbookMajorVersion)+" Program has successfully compiled `"+inputFilename+"`.";
-        if (debug || debugFull) {
-            std::cout << debugInfo << std::endl;
-            }
-        logDebugInfo(debugInfo, debugFile);
-    }
+    debugInfo = "Program has successfully compiled `"+inputFilename+"`.";
+    interpreterDebugHandler(debugFile, 900, debugInfo);
 
     if (debugFile.is_open()) {
         debugFile.close();

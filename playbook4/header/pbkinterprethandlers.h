@@ -12,6 +12,7 @@ void emojiConfigHandler();
 void outputHandler(std::ofstream outputFile);
 void errorHandler(int invokeError);
 void interpreterDebugHandler(std::ofstream& debugFile, int callCode, std::string debugInfo);
+int interpreterErrorHandler(int callCode, int lineIndex, std::string errorInfo);
 
 #endif
 
