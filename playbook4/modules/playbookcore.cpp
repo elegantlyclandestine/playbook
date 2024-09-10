@@ -31,7 +31,7 @@ std::string getCurrentWorkingDir() {
 }
 
 std::unordered_map<std::string, std::string> loadConfig(const std::string& configFilePath) {
-    std::unordered_map<std::string, std::string> emojiMap;
+    std::unordered_map<std::string, std::string> charMap;
     std::ifstream configFile(configFilePath);
     std::string line;
     bool commentFound = false;
@@ -45,11 +45,11 @@ std::unordered_map<std::string, std::string> loadConfig(const std::string& confi
         if (delimPos != std::string::npos && !commentFound) {
             std::string symbol = line.substr(0, delimPos);
             std::string emoji = line.substr(delimPos + 1);
-            emojiMap[symbol] = emoji;
+            charMap[symbol] = emoji;
         }
         commentFound = false;
     }
-    return emojiMap;
+    return charMap;
 }
 
 void logDebugInfo(const std::string& debugInfo, std::ofstream& dbgFile) {

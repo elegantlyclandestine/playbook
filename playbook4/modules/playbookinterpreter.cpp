@@ -36,8 +36,8 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
     debugInfo = "Program will now compile "+inputFilename+". Please wait...";
     interpreterDebugHandler(debugFile, 901, debugInfo);
 
-    // Load the emoji configuration file
-    std::unordered_map<std::string, std::string> emojiMap = loadConfig("emoji_config.txt");
+    // Load the configuration file
+    std::unordered_map<std::string, std::string> charMap = loadConfig("config.txt");
 
     while (std::getline(inputFile, line)) {
         // Print raw line for debugging
@@ -99,8 +99,8 @@ int interpretScript(std::ifstream& inputFile, std::string baseName) {
         size_t dotPos = line.find(".talk:");
         if (dotPos != std::string::npos) {
             std::string symbol = line.substr(0, dotPos);
-            auto it = emojiMap.find(symbol);
-            if (it != emojiMap.end()) {
+            auto it = charMap.find(symbol);
+            if (it != charMap.end()) {
                 if (symbolCount >= 10) {
                     // Move to the next file
                     outputFile.close();
