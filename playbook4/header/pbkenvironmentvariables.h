@@ -32,7 +32,5 @@ extern std::string configFilePath;
 extern std::string scriptFilePath;
 extern std::unordered_map<int, std::pair<std::string, std::string>> debugCodes;
 extern std::unordered_map<int, std::pair<std::string, std::string>> errorCodes;
-extern std::unordered_map<int, std::string> debugOuts;
-extern std::unordered_map<int, std::string> errorOuts;
 
 #endif

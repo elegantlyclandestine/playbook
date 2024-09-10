@@ -28,7 +28,7 @@ int debugDisplay(std::ofstream& debugOut, int callCode, std::string infoDump) {
 int errorDisplay(int callCode, int failedLine, std::string infoDump) {
     if (debugCodes.find(callCode) != debugCodes.end() || callCode != 100) {
         std::pair<std::string, std::string> errorInfo = errorCodes[callCode];
-        std::cerr << "Error: " << errorInfo.first << "(" << errorInfo.second << ") at line " << failedLine << std::endl << infoDump << std::endl;
+        std::cerr << "Error: " << errorInfo.first << " (" << errorInfo.second << ") at line " << failedLine << std::endl << infoDump << std::endl;
         return callCode;
     } else if (callCode == 100){
         std::cerr << "Error: No sections defined in any part of the whole file (NO_SECTIONS)" << std::endl;
