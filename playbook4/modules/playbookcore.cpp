@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <ctime>
 #include <unistd.h>
+#include <algorithm>
 #include "../header/playbookcore.h"
 #include "../header/pbkprojecthandler.h"
 #include "../header/playbookinterpreter.h"
@@ -38,7 +39,7 @@ std::unordered_map<std::string, std::string> loadConfig(const std::string& confi
 
     while (std::getline(configFile, line)) {
         // if comment found, skip line
-        if (line.find(":::") == !std::string::npos) {
+        if (std::count(line.begin(), line.end(), ':') == 3) {
             commentFound = true;
         }
         size_t delimPos = line.find('=');

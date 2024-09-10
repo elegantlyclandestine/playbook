@@ -5,7 +5,7 @@
 #include <filesystem>
 #include <ctime>
 #include <unistd.h>
-#include <vector>
+#include <algorithm>
 #include "header/playbookcore.h"
 #include "header/playbookinterpreter.h"
 #include "header/pbkprojecthandler.h"
