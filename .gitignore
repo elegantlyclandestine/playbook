@@ -4,9 +4,10 @@ playbook4/playbook4.dSYM/Contents/Resources/DWARF/playbook4
 playbook4/playbook4.dSYM/Contents/Resources/Relocations/x86_64/playbook4.yml
 playbook4/.DS_Store
 .DS_Store
-.vscode/c_cpp_properties.json
-.vscode/launch.json
-.vscode/settings.json
-.vscode/tasks.json
+.vscode/
 /playbook4/build
-playbook4/.vscode/settings.json
+playbook4/.vscode/
+playbook4/debug/playbook4
+playbook4/debug/playbook4.dSYM/Contents/Info.plist
+playbook4/debug/playbook4.dSYM/Contents/Resources/DWARF/playbook4
+playbook4/debug/playbook4.dSYM/Contents/Resources/Relocations/x86_64/playbook4.yml
