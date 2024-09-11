@@ -18,7 +18,6 @@ extern bool debugPrintout;
 extern bool debugFull;
 extern bool debugFullPrintout;
 extern bool createFlag;
-extern bool debugEnabled;
 extern int callCode;
 extern std::string creationDebugFlag;
 extern std::string baseFilename;
