@@ -58,7 +58,6 @@ void logDebugInfo(const std::string& debugInfo, std::ofstream& dbgFile) {
         std::cerr << "Error: Failed to write to debug file. File is not open." << std::endl;
     } else {
         dbgFile << debugInfo << std::endl;
-        dbgFile.flush(); // Ensure the data is written immediately
         if (dbgFile.fail()) {
             std::cerr << "Error: Failed to write debug information." << std::endl;
         }
