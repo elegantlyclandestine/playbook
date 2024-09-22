@@ -14,6 +14,7 @@
 namespace fs = std::__fs::filesystem;
 
 int main(int argc, char* argv[]) {
+    // only switch for debug purposes!
     debug = false;
     debugPrintout = false;
     debugFull = false;
@@ -21,6 +22,7 @@ int main(int argc, char* argv[]) {
     createFlag = false;
     if (commandArgumentHandler(argc, argv) == 0) {
         // Fix path declarations if slashes are detected on inputFilename
+        // inputFilename = "debugscript.pbk";
         std::string fullInputPath = getCurrentWorkingDir() + "/" + inputFilename;
         if (!fs::exists(fullInputPath)) {
             std::cerr << "Error: " << fullInputPath << " not detected" << std::endl;
