@@ -112,8 +112,8 @@ int commandArgumentHandler(int argCount, char* argValues[]) {
     }
 
     if (inputFilename.empty()) {
-        std::cerr << "Usage: playbook <input-file> [--debug] [--debug-printout] [--debug-full] [--debug-full-po/printout]" << std::endl
-                  << "       playbook create <project name> <project id> [--debug] [--debug-printout]" << std::endl;
+        std::cerr << "Usage: " << argValues[0] << " <input-file> [--debug] [--debug-printout] [--debug-full] [--debug-full-po/printout]" << std::endl
+                  << "       " << argValues[0] << " create <project name> <project id> [--debug] [--debug-printout]" << std::endl;
         return 1;
     }
     return 0;
