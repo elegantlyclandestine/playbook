@@ -6,6 +6,8 @@
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/playbookcore.h"
 
+namespace fs = std::filesystem;
+
 int playbookMajorVersion = 4;
 int playbookMinorVersion = 0;
 

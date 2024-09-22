@@ -10,7 +10,7 @@
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/pbkinterprethandlers.h"
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 int interpretScript(std::ifstream& inputFile, std::string baseName) {
     std::string currentEmoji;

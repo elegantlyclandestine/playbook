@@ -10,7 +10,7 @@
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/pbkprojcreatorwriteout.h"
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 void writeConfig(std::ofstream& configOut) {
     configOut << "::: Format:" << std::endl

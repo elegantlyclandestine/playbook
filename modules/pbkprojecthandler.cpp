@@ -11,7 +11,7 @@
 #include "../header/pbkprojcreatorwriteout.h"
 #include "../header/pbkprojdebugerrorhandlers.h"
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 int buildNewProject(std::string projectName, std::string projectId, std::string debugFlag) {
     std::ofstream creationDbgFile = createDebugFile(debugFlag);

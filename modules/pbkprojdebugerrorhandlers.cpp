@@ -11,6 +11,8 @@
 #include "../header/pbkprojcreatorwriteout.h"
 #include "../header/pbkprojdebugerrorhandlers.h"
 
+namespace fs = std::filesystem;
+
 void projWriteoutDebugHandler(int invokeDebug, std::string debugType, std::string debugInfo, std::string debugFlag) {
     // works the same way, except tailor made for project debugging. to be implemented.
 }

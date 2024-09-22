@@ -11,6 +11,8 @@
 #include "../header/pbkenvironmentvariables.h"
 #include "../header/pbkinterprethandlers.h"
 
+namespace fs = std::filesystem;
+
 int errorDisplay(int callCode, int failedLine, std::string infoDump) {
     if (debugCodes.find(callCode) != debugCodes.end() && (callCode != 100 && callCode != 111)) {
         std::pair<std::string, std::string> errorInfo = errorCodes[callCode];

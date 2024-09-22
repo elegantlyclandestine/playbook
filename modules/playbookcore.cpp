@@ -11,7 +11,7 @@
 #include "../header/playbookinterpreter.h"
 #include "../header/pbkenvironmentvariables.h"
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 std::ofstream createDebugFile(std::string debugFlag) {
     std::ofstream debugLogFile;
