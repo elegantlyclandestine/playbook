@@ -11,7 +11,7 @@
 #include "header/pbkprojecthandler.h"
 #include "header/pbkenvironmentvariables.h"
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 int main(int argc, char* argv[]) {
     // only switch for debug purposes!
