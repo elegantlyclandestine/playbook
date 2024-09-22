@@ -1,24 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(PlaybookProject)
+project(Playbook4)
 
 # Set the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-# Define the build type (can be overridden from the command line)
-set(CMAKE_BUILD_TYPE Debug)
-
-# Add custom compiler flags for debug builds
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE};cp playbook4 /usr/local/playbook")
 
 # Include header files
 include_directories(header)
 
 # Add the source files
-add_executable(playbook4
-    playbook4.cpp
+add_executable(playbook
+    playbook.cpp
     modules/pbkenvironmentvariables.cpp
     modules/pbkprojecthandler.cpp
     modules/playbookcore.cpp
@@ -27,6 +20,3 @@ add_executable(playbook4
     modules/pbkinterprethandlers.cpp
     modules/pbkprojdebugerrorhandlers.cpp
 )
-
-# Optionally, link libraries (if needed)
-# target_link_libraries(playbook4 ${LIBS})
