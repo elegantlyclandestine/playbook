@@ -67,38 +67,42 @@ void logDebugInfo(const std::string& debugInfo, std::ofstream& dbgFile) {
 int commandArgumentHandler(int argCount, char* argValues[]) {
     for (int i = 1; i < argCount; ++i) {
         std::string arg = argValues[i];
-        if (arg == "--version" || arg == "--v") {
-            std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
-        }
-        if (arg == "--debug") {
-            debug = true;
-            creationDebugFlag = "debug";
-            continue;
-        } else if (arg == "--debug-printout") {
-            debugPrintout = true;
-            creationDebugFlag = "debug-printout";
-            continue;
-        } else if (arg == "--debug-full") {
-            debugFull = true;
-            continue;
-        } else if (arg == "--debug-full-po" || arg == "--debug-full-printout") {
-            debugFullPrintout = true;
-            continue;
-        } else if (arg == "create") {
-            createFlag = true;
-            // Ensure that projectName and projectId are provided
-            if (i + 2 < argCount) {  // Check if there are at least two more arguments
-                projectName = argValues[++i];  // Get the next argument as projectName
-                projectId = argValues[++i];    // Get the following argument as projectId
-            } else {
-                std::cerr << "Error: `create` requires a project name and a project ID." << std::endl;
-                return 1;
-            }
-            continue;
-        } else {
-            baseFilename = argValues[i];
-            inputFilename = baseFilename + ".pbk";
-            continue;
+        CLIArgument argument = getArgument(arg);
+        switch (argument) {
+            case VERSION:
+                std::cout << "Playbook version " << playbookMajorVersion << "." << playbookMinorVersion << std::endl;
+                break;
+            case DEBUG:
+                debug = true;
+                creationDebugFlag = "debug";
+                break;
+            case DEBUG_PRINTOUT:
+                debugPrintout = true;
+                creationDebugFlag = "debug-printout";
+                break;
+            case DEBUG_FULL:
+                debugFull = true;
+                creationDebugFlag = "debug-full";
+                break;
+            case DEBUG_FULL_PRINTOUT:
+                debugFullPrintout = true;
+                creationDebugFlag = "debug-full-printout";
+                break;
+            case CREATE:
+                createFlag = true;
+                // Ensure that projectName and projectId are provided
+                if (i + 2 < argCount) {  // Check if there are at least two more arguments
+                    projectName = argValues[++i];  // Get the next argument as projectName
+                    projectId = argValues[++i];    // Get the following argument as projectId
+                } else {
+                    std::cerr << "Error: `create` requires a project name and a project ID." << std::endl;
+                    return 1;
+                }
+                break;
+            case UNDEFINED:
+                baseFilename = argValues[i];
+                inputFilename = baseFilename + ".pbk";
+                break;
         }
     }
 
