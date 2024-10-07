@@ -5,10 +5,7 @@
 #include <filesystem>
 #include <ctime>
 #include <unistd.h>
-#include "../header/playbookcore.h"
-#include "../header/pbkprojecthandler.h"
-#include "../header/pbkenvironmentvariables.h"
-#include "../header/pbkprojcreatorwriteout.h"
+#include "../header/playbookmaster.h"
 
 namespace fs = std::filesystem;
 

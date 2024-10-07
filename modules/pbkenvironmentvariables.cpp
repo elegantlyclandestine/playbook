@@ -3,8 +3,7 @@
 #include <filesystem>
 #include <unordered_map>
 #include <utility>
-#include "../header/pbkenvironmentvariables.h"
-#include "../header/playbookcore.h"
+#include "../header/playbookmaster.h"
 
 namespace fs = std::filesystem;
 
